@@ -9,6 +9,6 @@ def get(key, default=None):
     return os.environ.get(key=key, default=default)
 
 
-BASE_URL = 'https://jira.tc.lenovo.com'
+BASE_URL = get('URL', '')
 PROJECT_NAME = get('PROJECT_NAME', 'LCP')
 AUTH = get('AUTH', '')

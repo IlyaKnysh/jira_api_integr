@@ -1,7 +1,6 @@
 import sys
 
-from api.jira_api import add_label
-from api.jira_steps import create_test_ticket, check_test_ticket_exist
+from api.jira_steps import create_test_ticket
 from reports_parser import get_tests, convert_report_to_ticket, combine_parametrized_tickets
 
 """
