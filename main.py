@@ -10,6 +10,6 @@ Path to the folder with test results should be passed as a first command line ar
 list_of_tests = get_tests(sys.argv[1])
 # list_of_new_tests = [test for test in list_of_tests if not check_test_ticket_exist(test.get('name'))]
 tickets = convert_report_to_ticket(list_of_tests, 'smoke')
-combined_tickets = combine_parametrized_tickets(tickets)[1:]
+combined_tickets = combine_parametrized_tickets(tickets)
 for ticket in combined_tickets:
     create_test_ticket(ticket)
