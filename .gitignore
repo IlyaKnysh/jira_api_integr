@@ -1,6 +1,7 @@
 /venv
 .env
 /.idea
-/__pycache__
+__pycache__
 /results
 result.csv
+.DS_Store
