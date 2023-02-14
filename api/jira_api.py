@@ -108,8 +108,5 @@ def add_label(issue_id, label="automated"):
     return BaseApi().put(f'{BASE_URL}/rest/api/2/issue/{issue_id}', json=payload, headers=HEADERS)
 
 
-get_ticket_builder = GetTicketBuilder()
-create_ticket_builder = CreateTicketBuilder()
-
 if __name__ == "__main__":
     get_project_info()

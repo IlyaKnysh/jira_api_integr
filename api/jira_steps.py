@@ -1,4 +1,4 @@
-from api.jira_api import create_ticket_builder, get_issue_type_id, get_ticket_builder, get_project_info
+from api.jira_api import get_issue_type_id, get_project_info, GetTicketBuilder, CreateTicketBuilder
 from constants import PROJECT_NAME
 from entities import Ticket
 
@@ -11,12 +11,14 @@ def get_test_issue_type_id() -> str:
 
 
 def check_test_ticket_exist(summary: str) -> list:
+    get_ticket_builder = GetTicketBuilder()
     tickets = get_ticket_builder.summary(summary).project(PROJECT_NAME).issue_type('Test').execute().json().get(
         'issues')
     return [ticket for ticket in tickets if summary in ticket.get('fields').get('summary')]
 
 
 def create_test_ticket(ticket: Ticket) -> None:
+    create_ticket_builder = CreateTicketBuilder()
     global test_issue_type_id
     if not test_issue_type_id:
         test_issue_type_id = get_test_issue_type_id()
