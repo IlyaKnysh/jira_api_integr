@@ -12,3 +12,5 @@ def get(key, default=None):
 BASE_URL = get('URL', '')
 PROJECT_NAME = get('PROJECT_NAME', 'LCP')
 AUTH = get('AUTH', '')
+PACKAGE_NAME = get('PACKAGE_NAME', '')
+LABELS_LIST = get('LABELS_LIST', '').split(', ')

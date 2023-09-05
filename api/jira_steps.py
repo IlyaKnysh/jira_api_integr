@@ -17,7 +17,7 @@ def check_test_ticket_exist(summary: str) -> list:
     return [ticket for ticket in tickets if summary in ticket.get('fields').get('summary')]
 
 
-def create_test_ticket(ticket: Ticket) -> None:
+def create_test_ticket(ticket: Ticket, labels=()) -> None:
     create_ticket_builder = CreateTicketBuilder()
     global test_issue_type_id
     if not test_issue_type_id:
@@ -32,7 +32,8 @@ def create_test_ticket(ticket: Ticket) -> None:
         ticket.description = f'Params: \n{ticket.params}\n\n{ticket.description}'
     if ticket.description:
         query_builder.description(ticket.description)
-    query_builder.label('apiAutomated').label('SmokeAPI_UDS')
+    for label in labels:
+        query_builder.label(label)
     query_builder.execute()
 
 
