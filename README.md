@@ -9,9 +9,9 @@
 
     LABELS_LIST={target labels, divided by ',', E.G. apiAutomated, SmokeAPI_UDS}
 
+    REPORTS_PATH={path to folder with allure jsons}
 2. Install dependencies
 
 
     $ pip install -r requirements.txt
-3. Place json files from allure report to some folder and set it's path as a parameter
-4. Run main.py
+3. Run main.py
