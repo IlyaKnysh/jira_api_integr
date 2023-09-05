@@ -13,4 +13,5 @@
 
 
     $ pip install -r requirements.txt
-3. Run main.py
+3. Place json files from allure report to some folder and set it's path as a parameter
+4. Run main.py
